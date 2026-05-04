@@ -76,18 +76,6 @@ function flipWithProtection(text) {
         } catch (err) { console.error(err); }
     }
 
-async function getBritishValidation(text) {
-    const response = await fetch('SUA_ENDPOINT_DE_IA', {
-    method: 'POST',
-    body: JSON.stringify({
-    prompt: `Translate this Minecraft string to strict British English spelling (Oxford standard), keeping all placeholders like %s or %1$s intact: "${text}"`,
-    temperature: 0
-    })
-});
-        const data = await response.json();
-        return data.refinedText;
-}
-
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 document.onkeydown = function(e) {
